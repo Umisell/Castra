@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# Castra 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Castra is a decentralized social storage dApp built on the **Aptos Testnet**. It leverages Aptos identity and the Shelby protocol for secure, encrypted social data casts (posts). It also features **Castra Compose AI** to help you draft polished and natural social updates effortlessly.
 
-Currently, two official plugins are available:
+## ✨ Features
+- **Decentralized Storage**: Integrates with Shelby protocol and Aptos for reliable, on-chain data persistence.
+- **Privacy-First**: Focuses on secure and encrypted casts for user privacy. 
+- **AI-Powered Composition**: Draft polished casts quickly with the built-in AI composer (powered by OpenAI).
+- **Modern UI/UX**: Built with React, TypeScript, and Vite for a lightning-fast and responsive user experience.
+- **Production-Ready Security**: Console logs and debuggers are automatically disabled in the production environment to prevent accidental data leaks.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Getting Started
 
-## React Compiler
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- npm, yarn, or pnpm
+- An Aptos Wallet (e.g., [Petra Wallet](https://petra.app/)) for interacting with the Aptos Testnet.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Installation
 
-## Expanding the ESLint configuration
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Umisell/Castra.git
+   cd Castra
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+3. Set up environment variables:
+   Copy `.env.example` to `.env` and fill in the required keys:
+   ```bash
+   cp .env.example .env
+   ```
+   > **Note:** Never commit your `.env` file! The `.gitignore` is already configured to prevent this.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 💻 Tech Stack
+- **Frontend**: React 19, TypeScript, Vite
+- **Blockchain integration**: `@aptos-labs/ts-sdk`, `@aptos-labs/wallet-adapter-react`
+- **Storage/Protocol**: `@shelby-protocol/sdk`, `@shelby-protocol/react`
+- **AI**: OpenAI API
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔒 Security & Privacy
+- Sensitive keys and user data are strictly handled.
+- In production mode, all `console` outputs (logs, warnings, errors) are stripped at build-time using `esbuild` and overridden at runtime, ensuring no debugging information is exposed to end users.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📄 License
+This project is licensed under the MIT License.
