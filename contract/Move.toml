@@ -1,0 +1,11 @@
+[package]
+name = "CastraPro"
+version = "1.0.0"
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "aptos-framework-v1.11.0"
+subdir = "aptos-move/framework/aptos-framework"
+
+[addresses]
+castra_addr = "0x3cd4d9c55fe7ccb4117a879a9f68576a58bc6aeb327a805a38f5a76e70254a4b" 

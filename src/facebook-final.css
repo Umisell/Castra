@@ -1,0 +1,587 @@
+/* Final connected-app layout. Imported after index.css so this wins. */
+body:has(.app-frame) {
+  background: #f0f2f5 !important;
+  overflow: hidden !important;
+}
+
+:root[data-theme="dark"] body:has(.app-frame) {
+  background: #18191a !important;
+}
+
+.app-frame {
+  --fb-bg: #f0f2f5;
+  --fb-card: #ffffff;
+  --fb-input: #f0f2f5;
+  --fb-hover: #e4e6eb;
+  --fb-line: #dddfe2;
+  --fb-text: #050505;
+  --fb-muted: #65676b;
+  --fb-faint: #8a8d91;
+  --fb-blue: #0866ff;
+  --fb-blue-soft: #e7f3ff;
+  --fb-shadow: 0 1px 2px rgba(0, 0, 0, .12);
+  min-height: 100vh;
+  background: var(--fb-bg) !important;
+  color: var(--fb-text) !important;
+  font-family: Helvetica, Arial, sans-serif !important;
+}
+
+:root[data-theme="dark"] .app-frame {
+  --fb-bg: #18191a;
+  --fb-card: #242526;
+  --fb-input: #3a3b3c;
+  --fb-hover: #3a3b3c;
+  --fb-line: rgba(255, 255, 255, .12);
+  --fb-text: #e4e6eb;
+  --fb-muted: #b0b3b8;
+  --fb-faint: #8a8d91;
+  --fb-blue: #2d88ff;
+  --fb-blue-soft: #263951;
+}
+
+.app-frame .fb-appbar {
+  height: 56px !important;
+  display: grid !important;
+  grid-template-columns: 360px minmax(420px, 680px) 360px !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding: 0 16px !important;
+  background: var(--fb-card) !important;
+  border-bottom: 1px solid var(--fb-line) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .16) !important;
+}
+
+.app-frame .fb-appbar-left {
+  justify-self: start !important;
+}
+
+.app-frame .fb-appbar-right {
+  justify-self: end !important;
+  min-width: 160px !important;
+  gap: 12px !important;
+  padding-right: 6px !important;
+  overflow: visible !important;
+}
+
+.app-frame .fb-brand {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 999px !important;
+  background: var(--fb-blue) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.app-frame .fb-search {
+  width: 240px !important;
+}
+
+.app-frame .fb-search input {
+  height: 40px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: var(--fb-input) !important;
+  color: var(--fb-text) !important;
+  font-size: 15px !important;
+}
+
+.app-frame .fb-appbar-nav {
+  width: min(680px, 100%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+.app-frame .fb-appbar-nav button {
+  flex: 0 0 112px !important;
+  width: 112px !important;
+  height: 56px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 0 !important;
+  border-bottom: 3px solid transparent !important;
+  border-radius: 8px 8px 0 0 !important;
+  background: transparent !important;
+  color: var(--fb-muted) !important;
+  font-size: 0 !important;
+}
+
+.app-frame .fb-appbar-nav button span {
+  display: none !important;
+}
+
+.app-frame .fb-appbar-nav svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.app-frame .fb-appbar-nav button:hover {
+  background: var(--fb-hover) !important;
+}
+
+.app-frame .fb-appbar-nav button.active {
+  color: var(--fb-blue) !important;
+  border-bottom-color: var(--fb-blue) !important;
+}
+
+.app-frame .fb-appbar-right .theme-toggle,
+.app-frame .fb-profile-pill {
+  width: 40px !important;
+  min-width: 40px !important;
+  height: 40px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: var(--fb-input) !important;
+}
+
+.app-frame .fb-appbar-right .theme-toggle {
+  width: auto !important;
+  min-width: 86px !important;
+  padding: 0 12px !important;
+}
+
+.app-frame .fb-profile-pill {
+  flex: 0 0 40px !important;
+}
+
+.app-frame .fb-profile-pill b {
+  display: none !important;
+}
+
+.app-frame .fb-profile-pill span {
+  width: 40px !important;
+  height: 40px !important;
+  background: var(--fb-blue) !important;
+}
+
+.app-frame > .app {
+  width: 100vw !important;
+  max-width: none !important;
+  height: calc(100vh - 56px) !important;
+  display: grid !important;
+  grid-template-columns: minmax(260px, 360px) minmax(560px, 680px) minmax(280px, 360px) !important;
+  justify-content: space-between !important;
+  align-items: start !important;
+  gap: 24px !important;
+  margin: 0 !important;
+  padding: 16px 16px 0 !important;
+  background: transparent !important;
+}
+
+.app-frame .sidebar,
+.app-frame .main,
+.app-frame .right-sidebar {
+  height: calc(100vh - 72px) !important;
+  overflow: hidden auto !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  scrollbar-width: none;
+}
+
+.app-frame .sidebar::-webkit-scrollbar,
+.app-frame .main::-webkit-scrollbar,
+.app-frame .right-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.app-frame .sidebar {
+  justify-self: stretch !important;
+  padding: 8px 8px 18px 0 !important;
+}
+
+.app-frame .main {
+  width: min(680px, 100%) !important;
+  max-width: none !important;
+  justify-self: center !important;
+  padding: 0 0 32px !important;
+}
+
+.app-frame .right-sidebar {
+  justify-self: stretch !important;
+  padding: 12px 0 24px 8px !important;
+}
+
+.app-frame .s-logo,
+.app-frame .s-theme-wrap,
+.app-frame .feed-header,
+.app-frame .r-search,
+.app-frame .fb-story-strip {
+  display: none !important;
+}
+
+.app-frame .s-nav {
+  gap: 2px !important;
+}
+
+.app-frame .s-nav-item,
+.app-frame .s-profile-btn {
+  width: 100% !important;
+  min-height: 44px !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  margin: 0 !important;
+  padding: 0 12px !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  color: var(--fb-text) !important;
+  box-shadow: none !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+
+.app-frame .s-nav-item:hover,
+.app-frame .s-profile-btn:hover {
+  background: var(--fb-hover) !important;
+}
+
+.app-frame .s-nav-item.active {
+  background: var(--fb-hover) !important;
+  color: var(--fb-text) !important;
+}
+
+.app-frame .s-nav-item .nav-icon,
+.app-frame .s-profile-btn .nav-icon {
+  width: 36px !important;
+  height: 36px !important;
+  color: var(--fb-blue) !important;
+  background: transparent !important;
+}
+
+.app-frame .s-divider {
+  margin: 10px 8px !important;
+  border-color: var(--fb-line) !important;
+}
+
+.app-frame .sidebar div[style*="NODE CONTRIBUTION"],
+.app-frame .sidebar div[style*="Node Contribution"],
+.app-frame .sidebar div[style*="APT BALANCE"] {
+  margin: 8px 8px 12px !important;
+  border: 1px solid var(--fb-line) !important;
+  border-radius: 8px !important;
+  background: var(--fb-card) !important;
+  box-shadow: none !important;
+}
+
+.app-frame .s-profile {
+  margin: 8px !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.app-frame .s-cast-btn,
+.app-frame .pb-btn {
+  min-height: 44px !important;
+  margin: 14px 8px !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+  background: var(--fb-blue) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.app-frame .composer,
+.app-frame .cast {
+  margin: 0 0 12px !important;
+  border: 1px solid var(--fb-line) !important;
+  border-radius: 8px !important;
+  background: var(--fb-card) !important;
+  box-shadow: var(--fb-shadow) !important;
+}
+
+.app-frame .composer {
+  padding: 12px 16px 10px !important;
+}
+
+.app-frame .composer::before,
+.app-frame .composer::after,
+.app-frame .cast::before,
+.app-frame .cast::after,
+.app-frame .r-box::before,
+.app-frame .r-box::after,
+.app-frame .premium-box::before,
+.app-frame .premium-box::after {
+  display: none !important;
+  content: none !important;
+}
+
+.app-frame .composer-input {
+  height: 40px !important;
+  min-height: 40px !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: var(--fb-input) !important;
+  color: var(--fb-text) !important;
+  font-size: 16px !important;
+}
+
+.app-frame .composer-bottom,
+.app-frame .cast-actions {
+  border-top: 1px solid var(--fb-line) !important;
+}
+
+.app-frame .c-tool,
+.app-frame .ca {
+  border-radius: 8px !important;
+  color: var(--fb-muted) !important;
+}
+
+.app-frame .c-tool:hover,
+.app-frame .ca:hover {
+  background: var(--fb-hover) !important;
+  color: var(--fb-blue) !important;
+}
+
+.app-frame .cast {
+  padding: 12px !important;
+}
+
+.app-frame .cast-avatar,
+.app-frame .composer-avatar,
+.app-frame .s-avatar,
+.app-frame .fo-avatar {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 999px !important;
+  background: var(--fb-blue) !important;
+  color: #fff !important;
+}
+
+.app-frame .cast-name,
+.app-frame .s-profile-name {
+  color: var(--fb-text) !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+}
+
+.app-frame .cast-badge,
+.app-frame .cast-channel,
+.app-frame .thread-toggle,
+.app-frame .status-badge {
+  border-color: transparent !important;
+  background: var(--fb-blue-soft) !important;
+  color: var(--fb-blue) !important;
+}
+
+.app-frame .cast-media,
+.app-frame .castra-shelby-player {
+  border: 1px solid var(--fb-line) !important;
+  border-radius: 8px !important;
+  background: #050608 !important;
+}
+
+.app-frame .right-sidebar .r-box {
+  margin: 0 0 14px !important;
+  padding: 0 0 14px !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--fb-line) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.app-frame .right-sidebar .premium-box {
+  max-height: 112px !important;
+  overflow: hidden !important;
+  margin: 0 0 14px !important;
+  padding: 12px !important;
+  border: 1px solid var(--fb-line) !important;
+  border-radius: 8px !important;
+  background: var(--fb-card) !important;
+  box-shadow: var(--fb-shadow) !important;
+}
+
+.app-frame .r-box-title {
+  margin-bottom: 10px !important;
+  color: var(--fb-muted) !important;
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+}
+
+.app-frame .net-row {
+  min-height: 24px !important;
+  padding: 4px 0 !important;
+}
+
+.app-frame .nr-key,
+.app-frame .pb-desc,
+.app-frame .pb-perk {
+  color: var(--fb-muted) !important;
+  font-family: Helvetica, Arial, sans-serif !important;
+}
+
+.app-frame .nr-val {
+  color: var(--fb-text) !important;
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-weight: 700 !important;
+}
+
+@media (max-width: 1280px) {
+  .app-frame > .app {
+    grid-template-columns: 300px minmax(540px, 680px) 300px !important;
+    gap: 12px !important;
+  }
+
+  .app-frame .fb-appbar {
+    grid-template-columns: 300px minmax(320px, 480px) 220px !important;
+  }
+
+  .app-frame .fb-appbar-nav button {
+    width: 92px !important;
+    flex-basis: 92px !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .app-frame > .app {
+    grid-template-columns: 76px minmax(0, 680px) 300px !important;
+    justify-content: space-between !important;
+  }
+
+  .app-frame .s-nav-item span:not(.nav-icon),
+  .app-frame .s-profile-btn span:not(.nav-icon),
+  .app-frame .s-profile,
+  .app-frame .sidebar div[style*="APT BALANCE"],
+  .app-frame .sidebar div[style*="NODE CONTRIBUTION"],
+  .app-frame .sidebar div[style*="Node Contribution"],
+  .app-frame .s-disconnect-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .app-frame > .app {
+    grid-template-columns: minmax(0, 680px) !important;
+    justify-content: center !important;
+  }
+
+  .app-frame .sidebar,
+  .app-frame .right-sidebar,
+  .app-frame .fb-appbar-nav {
+    display: none !important;
+  }
+
+  .app-frame .fb-appbar {
+    grid-template-columns: 1fr auto !important;
+  }
+}
+
+/* Remove visible lane lines so the surface blends like Facebook. */
+body:has(.app-frame),
+.app-frame,
+.app-frame > .app,
+.app-frame .sidebar,
+.app-frame .main,
+.app-frame .right-sidebar {
+  background: #f0f2f5 !important;
+  background-image: none !important;
+}
+
+:root[data-theme="dark"] body:has(.app-frame),
+:root[data-theme="dark"] .app-frame,
+:root[data-theme="dark"] .app-frame > .app,
+:root[data-theme="dark"] .app-frame .sidebar,
+:root[data-theme="dark"] .app-frame .main,
+:root[data-theme="dark"] .app-frame .right-sidebar {
+  background: #18191a !important;
+  background-image: none !important;
+}
+
+.app-frame .sidebar,
+.app-frame .main,
+.app-frame .right-sidebar,
+.app-frame .s-nav,
+.app-frame .s-nav-item,
+.app-frame .s-profile-btn {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.app-frame .s-nav-item.active {
+  border: 0 !important;
+  background: var(--fb-hover) !important;
+  box-shadow: none !important;
+}
+
+.app-frame .s-divider {
+  border-color: transparent !important;
+}
+
+.app-frame .composer,
+.app-frame .cast,
+.app-frame .right-sidebar .premium-box,
+.app-frame .sidebar div[style*="NODE CONTRIBUTION"],
+.app-frame .sidebar div[style*="Node Contribution"],
+.app-frame .sidebar div[style*="APT BALANCE"] {
+  border-color: transparent !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .10) !important;
+}
+
+.app-frame .right-sidebar .r-box {
+  border-bottom-color: rgba(0, 0, 0, .12) !important;
+}
+
+:root[data-theme="dark"] .app-frame .right-sidebar .r-box {
+  border-bottom-color: rgba(255, 255, 255, .12) !important;
+}
+
+/* Kill old decorative layers from index.css that create visible lanes. */
+body:has(.app-frame)::before,
+body:has(.app-frame)::after,
+.app-frame > .app::before,
+.app-frame > .app::after,
+#app.app::before,
+#app.app::after,
+#app .sidebar::before,
+#app .sidebar::after,
+#app .main::before,
+#app .main::after,
+#app .right-sidebar::before,
+#app .right-sidebar::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
+
+#app.app {
+  isolation: auto !important;
+  background: #f0f2f5 !important;
+  background-image: none !important;
+}
+
+:root[data-theme="dark"] #app.app {
+  background: #18191a !important;
+}
+
+#app .sidebar,
+#app .main,
+#app .right-sidebar {
+  background: #f0f2f5 !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+:root[data-theme="dark"] #app .sidebar,
+:root[data-theme="dark"] #app .main,
+:root[data-theme="dark"] #app .right-sidebar {
+  background: #18191a !important;
+}
+
+#app .composer,
+#app .cast,
+#app .right-sidebar .premium-box,
+#app .sidebar div[style*="NODE CONTRIBUTION"],
+#app .sidebar div[style*="Node Contribution"],
+#app .sidebar div[style*="APT BALANCE"] {
+  background: var(--fb-card) !important;
+  background-image: none !important;
+}
